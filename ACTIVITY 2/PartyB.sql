@@ -4,14 +4,16 @@ SELECT customer_name,
 FROM sales
 GROUP BY customer_id,
     customer_name
-HAVING COUNT(customer_id) >= 8 -- Result: (run query to view values)
+HAVING COUNT(customer_id) >= 8 
+-- Result: Carlos 10, Joy 8, Kenneth 8, Grace Domingo 14, Leo 10
   
 -- Q10: Products that sold more than 50 total units (HAVING)
 SELECT product,
     SUM(quantity) AS total_units_sold
 FROM sales
 GROUP BY product
-HAVING SUM(quantity) > 50 -- Result: (run query to view values)
+HAVING SUM(quantity) > 50 
+-- Result: o
 
 -- Q11: Customers whose total spend is above the average customer spend (Subquery)
 SELECT customer_name,
@@ -27,4 +29,4 @@ HAVING SUM(total) > (
         GROUP BY customer_id
     ) AS customer_spends
 ); 
--- Result: (run query to view values)
+-- Result: 9 rows 
